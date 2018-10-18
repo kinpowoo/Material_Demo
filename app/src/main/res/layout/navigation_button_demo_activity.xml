@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.szsszwl.materail_demo.PageNavigationBarActivity">
+
+    <com.bilibili.magicasakura.widgets.TintAppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <com.bilibili.magicasakura.widgets.TintToolbar
+            android:id="@+id/nav_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/theme_color_primary"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        </com.bilibili.magicasakura.widgets.TintToolbar>
+    </com.bilibili.magicasakura.widgets.TintAppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.bilibili.magicasakura.widgets.TintLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/theme_color_primary_trans"
+            android:orientation="vertical">
+
+            <me.majiajie.pagerbottomtabstrip.PageNavigationView
+                android:id="@+id/bottom_bar"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="#FFF"
+                android:elevation="8dp" />
+
+            <me.majiajie.pagerbottomtabstrip.PageNavigationView
+                android:id="@+id/bottom_bar2"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="10dp"
+                android:background="#FFF"
+                android:elevation="8dp" />
+
+            <me.majiajie.pagerbottomtabstrip.PageNavigationView
+                android:id="@+id/bottom_bar3"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="10dp"
+                android:background="#FFF"
+                android:elevation="8dp" />
+
+            <me.majiajie.pagerbottomtabstrip.PageNavigationView
+                android:id="@+id/bottom_bar4"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="10dp"
+                android:background="#FFF"
+                android:elevation="8dp"
+                app:layout_behavior="me.majiajie.pagerbottomtabstriptest.behavior.BottomViewBehavior" />
+
+            <me.majiajie.pagerbottomtabstrip.PageNavigationView
+                android:id="@+id/bottom_bar5"
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:layout_marginTop="10dp"
+                android:background="#FFF"
+                android:elevation="8dp" />
+
+            <me.majiajie.pagerbottomtabstrip.PageNavigationView
+                android:id="@+id/bottom_bar6"
+                android:layout_width="56dp"
+                android:layout_height="250dp"
+                android:layout_marginTop="10dp"
+                android:background="#FFF"
+                android:elevation="8dp" />
+        </com.bilibili.magicasakura.widgets.TintLinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="navigation_view">
+
+    <!--将checkableBehavior 设为none可以取消选中效果-->
+    <group android:checkableBehavior="none">
+        <item android:id="@+id/nav_color_platte"
+            android:icon="@mipmap/color_board"
+            android:title="调色板" />
+        <item android:id="@+id/nav_navigation"
+            android:icon="@mipmap/navigation"
+            android:title="导航条" />
+        <item android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Slideshow" />
+        <item android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_menu_manage"
+            app:actionLayout="@layout/menu_item_notification"
+            android:title="Tools" />
+        <item android:id="@+id/night_mode_switch"
+            android:icon="@drawable/night"
+            app:actionLayout="@layout/menu_item_night_mode"
+            android:title="夜间模式"/>
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+
+        </menu>
+    </item>
+
+</menu>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    // in values-night/color.xml
+    <color name="theme_color_primary">#2d2d2d</color>
+    <color name="theme_color_primary_dark">#242424</color>
+    <color name="theme_color_primary_trans">#992d2d2d</color>
+    <color name="theme_color_secondary">#057748</color> // special used for night theme primary color
+
+    <color name="viewBackground">#212a2f</color>
+    <color name="colorDayNightChange">@android:color/holo_blue_dark</color>
+</resources>
