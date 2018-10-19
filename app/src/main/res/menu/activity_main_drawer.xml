@@ -11,10 +11,10 @@
             android:title="调色板" />
         <item android:id="@+id/nav_navigation"
             android:icon="@mipmap/navigation"
-            android:title="导航条" />
-        <item android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:title="底部导航条" />
+        <item android:id="@+id/collapse"
+            android:icon="@mipmap/collapse"
+            android:title="Collapse导航栏" />
         <item android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
             app:actionLayout="@layout/menu_item_notification"

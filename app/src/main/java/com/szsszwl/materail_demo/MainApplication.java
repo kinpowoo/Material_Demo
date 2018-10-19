@@ -50,19 +50,19 @@ public class MainApplication extends Application implements ThemeUtils.switchCol
 
 
     private String getTheme(Context context) {
-        if (ThemeHelper.getTheme(context) == ThemeHelper.CARD_STORM) {
+        if (ThemeHelper.getTheme(context) == ThemeHelper.CARD_BLUE) {
             return "blue";
-        } else if (ThemeHelper.getTheme(context) == ThemeHelper.CARD_HOPE) {
+        } else if (ThemeHelper.getTheme(context) == ThemeHelper.CARD_PURPLE) {
             return "purple";
-        } else if (ThemeHelper.getTheme(context) == ThemeHelper.CARD_WOOD) {
+        } else if (ThemeHelper.getTheme(context) == ThemeHelper.CARD_GREEN) {
             return "green";
-        } else if (ThemeHelper.getTheme(context) == ThemeHelper.CARD_LIGHT) {
+        } else if (ThemeHelper.getTheme(context) == ThemeHelper.CARD_GREEN_LIGHT) {
             return "green_light";
-        } else if (ThemeHelper.getTheme(context) == ThemeHelper.CARD_THUNDER) {
+        } else if (ThemeHelper.getTheme(context) == ThemeHelper.CARD_YELLOW) {
             return "yellow";
-        } else if (ThemeHelper.getTheme(context) == ThemeHelper.CARD_SAND) {
+        } else if (ThemeHelper.getTheme(context) == ThemeHelper.CARD_ORANGE) {
             return "orange";
-        } else if (ThemeHelper.getTheme(context) == ThemeHelper.CARD_FIREY) {
+        } else if (ThemeHelper.getTheme(context) == ThemeHelper.CARD_RED) {
             return "red";
         }
         return null;

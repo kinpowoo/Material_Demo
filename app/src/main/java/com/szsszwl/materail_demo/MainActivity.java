@@ -179,8 +179,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             dialog.show(getSupportFragmentManager(), CardPickerDialog.TAG);
         } else if (id == R.id.nav_navigation) {
             startActivity(new Intent(this, PageNavigationBarActivity.class));
-        } else if (id == R.id.nav_slideshow) {
-
+        } else if (id == R.id.collapse) {
+            startActivity(new Intent(this, CollapsingLayoutActivity.class));
         } else if (id == R.id.nav_manage) {
 
         }else if (id == R.id.night_mode_switch){

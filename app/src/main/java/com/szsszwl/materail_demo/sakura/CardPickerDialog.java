@@ -73,35 +73,35 @@ public class CardPickerDialog extends DialogFragment implements View.OnClickList
                 dismiss();
                 break;
             case R.id.theme_pink:
-                mCurrentTheme = ThemeHelper.CARD_SAKURA;
+                mCurrentTheme = ThemeHelper.CARD_PINK;
                 setImageButtons(mCurrentTheme);
                 break;
             case R.id.theme_purple:
-                mCurrentTheme = ThemeHelper.CARD_HOPE;
+                mCurrentTheme = ThemeHelper.CARD_PURPLE;
                 setImageButtons(mCurrentTheme);
                 break;
             case R.id.theme_blue:
-                mCurrentTheme = ThemeHelper.CARD_STORM;
+                mCurrentTheme = ThemeHelper.CARD_BLUE;
                 setImageButtons(mCurrentTheme);
                 break;
             case R.id.theme_green:
-                mCurrentTheme = ThemeHelper.CARD_WOOD;
+                mCurrentTheme = ThemeHelper.CARD_GREEN;
                 setImageButtons(mCurrentTheme);
                 break;
             case R.id.theme_green_light:
-                mCurrentTheme = ThemeHelper.CARD_LIGHT;
+                mCurrentTheme = ThemeHelper.CARD_GREEN_LIGHT;
                 setImageButtons(mCurrentTheme);
                 break;
             case R.id.theme_yellow:
-                mCurrentTheme = ThemeHelper.CARD_THUNDER;
+                mCurrentTheme = ThemeHelper.CARD_YELLOW;
                 setImageButtons(mCurrentTheme);
                 break;
             case R.id.theme_orange:
-                mCurrentTheme = ThemeHelper.CARD_SAND;
+                mCurrentTheme = ThemeHelper.CARD_ORANGE;
                 setImageButtons(mCurrentTheme);
                 break;
             case R.id.theme_red:
-                mCurrentTheme = ThemeHelper.CARD_FIREY;
+                mCurrentTheme = ThemeHelper.CARD_RED;
                 setImageButtons(mCurrentTheme);
                 break;
             default:
@@ -110,14 +110,14 @@ public class CardPickerDialog extends DialogFragment implements View.OnClickList
     }
 
     private void setImageButtons(int currentTheme) {
-        mCards[0].setSelected(currentTheme == ThemeHelper.CARD_SAKURA);
-        mCards[1].setSelected(currentTheme == ThemeHelper.CARD_HOPE);
-        mCards[2].setSelected(currentTheme == ThemeHelper.CARD_STORM);
-        mCards[3].setSelected(currentTheme == ThemeHelper.CARD_WOOD);
-        mCards[4].setSelected(currentTheme == ThemeHelper.CARD_LIGHT);
-        mCards[5].setSelected(currentTheme == ThemeHelper.CARD_THUNDER);
-        mCards[6].setSelected(currentTheme == ThemeHelper.CARD_SAND);
-        mCards[7].setSelected(currentTheme == ThemeHelper.CARD_FIREY);
+        mCards[0].setSelected(currentTheme == ThemeHelper.CARD_PINK);
+        mCards[1].setSelected(currentTheme == ThemeHelper.CARD_PURPLE);
+        mCards[2].setSelected(currentTheme == ThemeHelper.CARD_BLUE);
+        mCards[3].setSelected(currentTheme == ThemeHelper.CARD_GREEN);
+        mCards[4].setSelected(currentTheme == ThemeHelper.CARD_GREEN_LIGHT);
+        mCards[5].setSelected(currentTheme == ThemeHelper.CARD_YELLOW);
+        mCards[6].setSelected(currentTheme == ThemeHelper.CARD_ORANGE);
+        mCards[7].setSelected(currentTheme == ThemeHelper.CARD_RED);
     }
 
     public void setClickListener(ClickListener clickListener) {
