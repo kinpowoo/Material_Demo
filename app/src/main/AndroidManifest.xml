@@ -22,10 +22,14 @@
 
         <activity android:name=".PageNavigationBarActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".sakura.ColorPickerActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
 
         <activity android:name=".CollapsingLayoutActivity"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+
     </application>
 
 </manifest>

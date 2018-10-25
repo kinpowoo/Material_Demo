@@ -29,7 +29,7 @@
         <com.bilibili.magicasakura.widgets.TintLinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/theme_color_primary_trans"
+            android:background="@color/theme_color_primary_light"
             android:orientation="vertical">
 
             <me.majiajie.pagerbottomtabstrip.PageNavigationView

@@ -32,11 +32,11 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
-    //percent layout
-    compile 'com.android.support:percent:27.0.1'
-
     //page navigation bar
     compile 'me.majiajie:pager-bottom-tab-strip:2.3.0'
+
+    //percent layout
+    compile 'com.android.support:percent:27.0.1'
 
     compile 'com.android.support:appcompat-v7:27.0.1'
     testCompile 'junit:junit:4.12'

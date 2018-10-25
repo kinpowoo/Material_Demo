@@ -14,6 +14,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatDelegate;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -29,26 +30,27 @@ import com.bilibili.magicasakura.widgets.TintTextView;
 import com.bilibili.magicasakura.widgets.TintToolbar;
 import com.szsszwl.materail_demo.custom_tint_view.TintFloatingActionButton;
 import com.szsszwl.materail_demo.custom_tint_view.TintImageButton;
-import com.szsszwl.materail_demo.sakura.CardPickerDialog;
+import com.szsszwl.materail_demo.sakura.BaseActivity;
+import com.szsszwl.materail_demo.sakura.ColorPickerActivity;
 import com.szsszwl.materail_demo.sakura.ThemeHelper;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
-        CardPickerDialog.ClickListener {
+public class MainActivity extends BaseActivity implements
+        NavigationView.OnNavigationItemSelectedListener {
 
     @BindView(R.id.fab)
     TintFloatingActionButton fab;
-    @BindView(R.id.toolbar)
-    TintToolbar toolbar;
 
     @BindView(R.id.content_text)
     TintTextView contentText;
 
     @BindView(R.id.tib)
     TintImageButton tintButton;
+
+    Toolbar toolbar;
 
 
     @Override
@@ -57,9 +59,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        //设actionBar为自定义的Toolbar
-        setSupportActionBar(toolbar);
-        Log.i("tag","Activity on Create");
+        toolbar = setupToolbar(false);
 
 
         fab.setOnClickListener(new View.OnClickListener() {
@@ -173,10 +173,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.nav_color_platte) {
-            //调色板被点击
-            CardPickerDialog dialog = new CardPickerDialog();
-            dialog.setClickListener(this);
-            dialog.show(getSupportFragmentManager(), CardPickerDialog.TAG);
+            startActivityForResult(new Intent(this, ColorPickerActivity.class),0x22);
         } else if (id == R.id.nav_navigation) {
             startActivity(new Intent(this, PageNavigationBarActivity.class));
         } else if (id == R.id.collapse) {
@@ -197,100 +194,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-
-    //调色板中颜色被点击回调
     @Override
-    public void onConfirm(int currentTheme) {
-        if (ThemeHelper.getTheme(MainActivity.this) != currentTheme) {
-            ThemeHelper.setTheme(MainActivity.this, currentTheme);
-            ThemeUtils.refreshUI(MainActivity.this, new ThemeUtils.ExtraRefreshable() {
-                        @Override
-                        public void refreshGlobal(Activity activity) {
-                            //for global setting, just do once
-                            if (Build.VERSION.SDK_INT >= 21) {
-                                final MainActivity context = MainActivity.this;
-                                ActivityManager.TaskDescription taskDescription =
-                                        new ActivityManager.TaskDescription(null, null,
-                                                ThemeUtils.getThemeAttrColor(context, android.R.attr.colorPrimary));
-                                setTaskDescription(taskDescription);
-                                getWindow().setStatusBarColor(
-                                        ThemeUtils.getColorById(context, R.color.theme_color_primary));
-                            }
-                        }
-
-                        @Override
-                        public void refreshSpecificView(View view) {
-                            //这里会对所有view进行遍历
-                        }
-                    }
-            );
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(resultCode == RESULT_CANCELED && requestCode == 0x22){
+            //int themeId = data.getIntExtra("current_theme", ThemeHelper.CARD_PINK);
+            ThemeHelper.refreshTheme(this);
         }
     }
 
 
-    private ColorStateList createColorStateList(int normal,int pressed) {
-        return createColorStateList(normal, pressed, 0xff0000ff, 0xffff0000);
-    }
-
-    //生成ColorStateList对象，实际上是一个selector的drawable对象
-    private ColorStateList createColorStateList(int normal, int pressed, int focused, int unable) {
-        int[] colors = new int[] { pressed, focused, normal, focused, unable, normal };
-        int[][] states = new int[6][];
-        states[0] = new int[] { android.R.attr.state_pressed, android.R.attr.state_enabled };
-        states[1] = new int[] { android.R.attr.state_enabled, android.R.attr.state_focused };
-        states[2] = new int[] { android.R.attr.state_enabled };
-        states[3] = new int[] { android.R.attr.state_focused };
-        states[4] = new int[] { android.R.attr.state_window_focused };
-        states[5] = new int[] {};
-        ColorStateList colorList = new ColorStateList(states, colors);
-        return colorList;
-    }
 
 
-    //从XML文件中获取ColorStateList对象
-    public ColorStateList getColorStateListForXML(int xmlSelectorID){
-        Resources resource=(Resources)getBaseContext().getResources();
-        ColorStateList csl=(ColorStateList)resource.getColorStateList(xmlSelectorID);
-        if(csl!=null){
-            return csl;
-        }
-        return null;
-    }
-
-    public ColorStateList createColorStateListForXML(int xmlSelectorID) {
-        XmlResourceParser xpp=Resources.getSystem().getXml(xmlSelectorID);
-        try {
-            ColorStateList csl= ColorStateList.createFromXml(getResources(),xpp);
-            return csl;
-        } catch (Exception e) {
-            // TODO: handle exception
-            return null;
-        }
-    }
-
-
-    //生成StateListDrawable对象,实际上是selector drawable
-    public static StateListDrawable newSelector(Context context, int idNormal, int idPressed,
-                                                int idFocused, int idUnable) {
-        StateListDrawable bg = new StateListDrawable();
-        Drawable normal = idNormal == -1 ? null : context.getResources().getDrawable(idNormal);
-        Drawable pressed = idPressed == -1 ? null : context.getResources().getDrawable(idPressed);
-        Drawable focused = idFocused == -1 ? null : context.getResources().getDrawable(idFocused);
-        Drawable unable = idUnable == -1 ? null : context.getResources().getDrawable(idUnable);
-        // View.PRESSED_ENABLED_STATE_SET
-        bg.addState(new int[] { android.R.attr.state_pressed, android.R.attr.state_enabled }, pressed);
-        // View.ENABLED_FOCUSED_STATE_SET
-        bg.addState(new int[] { android.R.attr.state_enabled, android.R.attr.state_focused }, focused);
-        // View.ENABLED_STATE_SET
-        bg.addState(new int[] { android.R.attr.state_enabled }, normal);
-        // View.FOCUSED_STATE_SET
-        bg.addState(new int[] { android.R.attr.state_focused }, focused);
-        // View.WINDOW_FOCUSED_STATE_SET
-        bg.addState(new int[] { android.R.attr.state_window_focused }, unable);
-        // View.EMPTY_STATE_SET
-        bg.addState(new int[] {}, normal);
-        return bg;
-    }
 
 
 }

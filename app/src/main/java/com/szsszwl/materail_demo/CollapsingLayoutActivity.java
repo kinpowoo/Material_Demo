@@ -4,12 +4,9 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 
-import com.bilibili.magicasakura.utils.ThemeUtils;
 import com.bilibili.magicasakura.widgets.TintToolbar;
 import com.szsszwl.materail_demo.sakura.ThemeHelper;
 
@@ -50,7 +47,8 @@ public class CollapsingLayoutActivity extends AppCompatActivity {
 
 
         //跟据主题来设置 contentScrim 颜色
-        collapsingToolbarLayout.setContentScrimColor(ThemeHelper.getCurrentPrimaryColor(this));
+        collapsingToolbarLayout.setContentScrimColor(ThemeHelper.getPrimaryColorByThemeId(
+               this,ThemeHelper.getTheme(this)));
 
 
     }
