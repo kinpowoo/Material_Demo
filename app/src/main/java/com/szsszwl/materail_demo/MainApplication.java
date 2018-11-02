@@ -19,7 +19,6 @@ public class MainApplication extends Application implements ThemeUtils.switchCol
         super.onCreate();
 
         ThemeUtils.setSwitchColor(this);
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO);
     }
 
     @Override

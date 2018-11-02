@@ -60,6 +60,10 @@ public class MainActivity extends BaseActivity implements
         ButterKnife.bind(this);
 
         toolbar = setupToolbar(false);
+        int color = ThemeHelper.getPrimaryColorByThemeId(this,ThemeHelper.getTheme(this));
+        if (Build.VERSION.SDK_INT >= 21) {
+            getWindow().setStatusBarColor(color);
+        }
 
 
         fab.setOnClickListener(new View.OnClickListener() {

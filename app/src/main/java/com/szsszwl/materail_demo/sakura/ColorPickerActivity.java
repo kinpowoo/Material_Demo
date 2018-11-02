@@ -1,5 +1,6 @@
 package com.szsszwl.materail_demo.sakura;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.SwitchCompat;
@@ -10,6 +11,7 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.bilibili.magicasakura.utils.ThemeUtils;
 import com.szsszwl.materail_demo.R;
 
 /**
@@ -240,6 +242,9 @@ public class ColorPickerActivity extends BaseActivity implements View.OnClickLis
         toolbar.setBackgroundColor(color);
         int primaryColorLight = ThemeHelper.getPrimaryColorLightByThemeId(ColorPickerActivity.this,
                 currentTheme);
+        if (Build.VERSION.SDK_INT >= 21) {
+            getWindow().setStatusBarColor(color);
+        }
         nightModeArea.setBackgroundColor(primaryColorLight);
     }
 
