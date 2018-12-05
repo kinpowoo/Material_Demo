@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.szsszwl.frameworkproj.com.szsszwl.materail_demo.DemoHubActivity">
+
+    <item
+        android:id="@+id/nav_color_platte"
+        android:icon="@drawable/framework_library_color_platte"
+        app:showAsAction="always"
+        android:title="调色板" />
+    <item
+        android:id="@+id/nav_remote_download"
+        android:icon="@drawable/framework_library_download"
+        app:showAsAction="always"
+        android:title="下载" />
+    <item
+        android:id="@+id/nav_web"
+        app:showAsAction="always"
+        android:orderInCategory="101"
+        android:icon="@drawable/framework_library_navigation"
+        android:title="Web" />
+</menu>

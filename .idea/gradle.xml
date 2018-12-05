@@ -8,6 +8,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/FrameworkProj/FrameworkLibrary" />
             <option value="$PROJECT_DIR$/app" />
           </set>
         </option>

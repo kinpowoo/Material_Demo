@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.szsszwl.materail_demo">
 
     <application
@@ -11,9 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".DemoHubActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -21,15 +22,42 @@
         </activity>
 
         <activity android:name=".PageNavigationBarActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".sakura.ColorPickerActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
-
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".IntroActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".CacheDemoActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".WebDemoActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".EventBusDemoActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".CommonActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".DownloadDemoActivity"
+            android:theme="@style/AppTheme"/>
         <activity android:name=".CollapsingLayoutActivity"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".CommonFuncDemoActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".CommonItemDemoActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".CommonMessageDemoActivity"
+            android:theme="@style/AppTheme"/>
 
+
+
+        <!--用于7.0以上的机型访问文件-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <!--元数据-->
+            <meta-data
+                tools:replace="android:resource"
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path" />
+        </provider>
     </application>
 
 </manifest>

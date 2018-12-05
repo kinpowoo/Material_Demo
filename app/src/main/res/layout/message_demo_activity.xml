@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.bilibili.magicasakura.widgets.TintToolbar
+            android:id="@+id/toolbar"
+            app:title="消息传输总线演示"
+            android:background="@color/theme_color_primary"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+        </com.bilibili.magicasakura.widgets.TintToolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <com.bilibili.magicasakura.widgets.TintLinearLayout
+        android:orientation="vertical"
+        android:background="@color/theme_color_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.bilibili.magicasakura.widgets.TintTextView
+            android:id="@+id/content"
+            android:text="Hello MessageDemo"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:textSize="17sp"
+            android:textColor="@color/theme_color_primary_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.bilibili.magicasakura.widgets.TintButton
+            android:id="@+id/post_message"
+            android:layout_marginTop="50dp"
+            android:padding="8dp"
+            android:textColor="@color/theme_color_primary_text"
+            android:layout_gravity="center"
+            android:background="@drawable/framework_library_click_affect"
+            android:text="向MainActivity发送消息"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </com.bilibili.magicasakura.widgets.TintLinearLayout>
+
+</LinearLayout>

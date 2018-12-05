@@ -1,27 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout
+<android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    android:layout_height="match_parent">
 
-    <include layout="@layout/app_bar_main"
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
 
-    <android.support.design.widget.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="400dp"
+        <com.bilibili.magicasakura.widgets.TintToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            app:layout_scrollFlags="scroll|enterAlways"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/theme_color_primary" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_main" />
+
+
+    <com.szsszwl.frameworkproj.custom_view.fab.FloatingActionMenu
+        android:id="@+id/fab_menu"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer" >
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="56dp"
+        android:padding="16dp"
+        android:elevation="1dp"
+        app:layout_behavior="com.szsszwl.frameworkproj.behavior.BottomLayoutBehavior"
+        app:menu_backgroundColor="#ccffffff"
+        app:menu_colorNormal="@color/theme_color_primary"
+        app:menu_colorPressed="@color/theme_color_primary_light"
+        app:menu_labels_ellipsize="end"
+        app:menu_labels_position="left"
+        app:menu_labels_singleLine="true">
 
-    </android.support.design.widget.NavigationView>
+        <com.szsszwl.frameworkproj.custom_view.fab.FloatingActionButton
+            android:id="@+id/add_tab"
+            style="@style/MenuButtonsStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/theme_color_primary"
+            android:src="@drawable/framework_library_add"
+            app:fab_label="添加菜单" />
 
-</android.support.v4.widget.DrawerLayout>
+        <com.szsszwl.frameworkproj.custom_view.fab.FloatingActionButton
+            android:id="@+id/remove_tab"
+            style="@style/MenuButtonsStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/theme_color_primary"
+            android:src="@drawable/framework_library_remove"
+            app:fab_label="删除菜单" />
+    </com.szsszwl.frameworkproj.custom_view.fab.FloatingActionMenu>
+
+    <me.majiajie.pagerbottomtabstrip.PageNavigationView
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom"
+        android:background="#FFF"
+        android:elevation="0dp"
+        app:layout_behavior="com.szsszwl.frameworkproj.behavior.BottomLayoutBehavior" />
+
+</android.support.design.widget.CoordinatorLayout>

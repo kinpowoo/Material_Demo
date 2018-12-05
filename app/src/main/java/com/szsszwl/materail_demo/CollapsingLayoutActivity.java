@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.bilibili.magicasakura.widgets.TintToolbar;
-import com.szsszwl.materail_demo.sakura.ThemeHelper;
+import com.szsszwl.frameworkproj.sakura_theme.ThemeHelper;
 
 import butterknife.BindView;
 

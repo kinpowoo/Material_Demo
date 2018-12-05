@@ -1,1 +1,2 @@
-include ':app'
+include ':app', ':FrameworkLibrary'
+project(':FrameworkLibrary').projectDir = new File('FrameworkProj/FrameworkLibrary')

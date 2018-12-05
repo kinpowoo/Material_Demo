@@ -7,9 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 
 import com.bilibili.magicasakura.widgets.TintToolbar;
-import com.szsszwl.materail_demo.page_navigation_bar.OnlyIconItemView;
-import com.szsszwl.materail_demo.page_navigation_bar.SpecialTab;
-import com.szsszwl.materail_demo.page_navigation_bar.SpecialTabRound;
+import com.szsszwl.frameworkproj.bottom_tablayout.OnlyIconItemView;
+import com.szsszwl.frameworkproj.bottom_tablayout.SpecialTab;
+import com.szsszwl.frameworkproj.bottom_tablayout.SpecialTabRound;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

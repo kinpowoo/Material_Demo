@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.bilibili.magicasakura.widgets.TintToolbar
+            android:id="@+id/toolbar"
+            app:title="缓存操作"
+            android:background="@color/theme_color_primary"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+        </com.bilibili.magicasakura.widgets.TintToolbar>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.bilibili.magicasakura.widgets.TintButton
+            android:id="@+id/save_cache"
+            android:text="保存缓存"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <com.bilibili.magicasakura.widgets.TintButton
+            android:id="@+id/read_cache"
+            android:text="读取缓存"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.bilibili.magicasakura.widgets.TintButton
+            android:id="@+id/remove_cache"
+            android:text="清除缓存"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <com.bilibili.magicasakura.widgets.TintTextView
+        android:id="@+id/text_area"
+        android:layout_margin="5dp"
+        android:background="@color/theme_color_primary_light"
+        android:textColor="@color/theme_color_primary"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

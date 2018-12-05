@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 26
     buildToolsVersion "28.0.3"
     defaultConfig {
         applicationId "com.szsszwl.materail_demo"
-        minSdkVersion 19
-        targetSdkVersion 27
+        minSdkVersion 21
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -17,29 +17,43 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        main {
+            res.srcDirs = [
+                    'src/main/res'
+            ]
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    allprojects {
+        repositories {
+            //引导页框架需要这个maven源
+            maven { url 'https://jitpack.io' }
+        }
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
-    //sakura multi theme
+    implementation 'com.android.support:appcompat-v7:26.0.1'
+    implementation 'com.android.support:design:26.0.1'
+    //底部导航条
+    implementation 'me.majiajie:pager-bottom-tab-strip:2.3.0'
+    //多颜色主题
     implementation 'com.bilibili:magicasakura:0.1.8@aar'
-
     //butter knife binding view
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-
-    //page navigation bar
-    implementation 'me.majiajie:pager-bottom-tab-strip:2.3.0'
-
-    //percent layout
-    implementation 'com.android.support:percent:27.0.1'
-
-    implementation 'com.android.support:appcompat-v7:27.0.1'
     testImplementation 'junit:junit:4.12'
-    implementation 'com.android.support:design:27.0.1'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    //Rx java事件流
+    implementation 'io.reactivex.rxjava2:rxjava:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'com.github.apl-devs:appintro:v4.2.3'
+
+    implementation 'com.github.kinpowoo:frameworkproj:v1.2'
 }

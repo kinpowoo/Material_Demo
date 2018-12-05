@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.bilibili.magicasakura.widgets.TintToolbar
+            android:id="@+id/toolbar"
+            android:background="@color/theme_color_primary"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="WebView演示" />
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/action_activity"
+                android:background="@drawable/framework_library_black_border_white_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/theme_color_primary_text"
+                android:text="Activity中使用Webview" />
+
+            <Button
+                android:id="@+id/action_fragment"
+                android:background="@drawable/framework_library_black_border_white_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/theme_color_primary_text"
+                android:text="Fragment中使用Webview" />
+
+            <Button
+                android:id="@+id/action_download"
+                android:background="@drawable/framework_library_black_border_white_bg"
+                android:layout_width="match_parent"
+                android:textColor="@color/theme_color_primary_text"
+                android:layout_height="wrap_content"
+                android:text="Webview下载文件" />
+
+            <Button
+                android:id="@+id/action_upload_by_input"
+                android:background="@drawable/framework_library_black_border_white_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/theme_color_primary_text"
+                android:text="Input标签上传文件" />
+
+            <Button
+                android:id="@+id/action_upload_by_js"
+                android:background="@drawable/framework_library_black_border_white_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/theme_color_primary_text"
+                android:text="JS上传文件" />
+
+            <Button
+                android:id="@+id/action_call"
+                android:background="@drawable/framework_library_black_border_white_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/theme_color_primary_text"
+                android:text="JS与Java互调" />
+
+
+            <Button
+                android:id="@+id/action_full_screen"
+                android:background="@drawable/framework_library_black_border_white_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/theme_color_primary_text"
+                android:text="全屏播放" />
+
+            <Button
+                android:id="@+id/action_custom_indicator"
+                android:background="@drawable/framework_library_black_border_white_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/theme_color_primary_text"
+                android:text="自定义加载进度条" />
+
+            <Button
+                android:id="@+id/action_auto_hide_tool_bar"
+                android:background="@drawable/framework_library_black_border_white_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/theme_color_primary_text"
+                android:text="自动隐藏导航条,底部菜单选项" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
